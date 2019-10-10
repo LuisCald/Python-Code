@@ -1,7 +1,2 @@
 # Python-Code
-This will serve two purposes: 
-
-(1) an illustrative purpose: documenting/commenting methodologies I have learned as my time as an RA (mostly pandas). Nevertheless, I'd like to exhaust all tools that effectively extract and present information from data.  
-
-(2) just notes: code on material I am learning about actively or from classes that I am taking. 
-
+This will serve several purposes. I set a realistic goal of 100 hours of python a month - independent of work and assignments. In conjunction, I'll be posting short files on anything python with the personal goal of expanding my python library. I also wanted a way to record my progress and think this is a good way to do it. Each py file will be commented. I'd like to exhaust all tools that effectively extract and present information from data. Lastly, the remaining files will be from projects and assignments I am actively working on.  
