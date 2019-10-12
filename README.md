@@ -16,10 +16,14 @@ This will serve several purposes. I set a realistic goal of 100 hours of python 
 
 7) Other Stat Stuff.ipynb 
 
-8) Python_terminology.pdf is my interpretation of the objects in python plus some writing conventions.
+8) PersonA1-afteralldescriptivestats19756.dta is the dataset I use for 1)
 
-9) Simultaneous Equations.ipynb
+9) PersonB1-afterallvariableadditions14782.dta is the additional dataset I use for 1) 
 
-10) Stats from some appendix book.ipynb
+10) Python_terminology.pdf is my interpretation of the objects in python plus some writing conventions.
 
-11) Sympy - Math Latex.ipynb
+11) Simultaneous Equations.ipynb
+
+12) Stats from some appendix book.ipynb
+
+13) Sympy - Math Latex.ipynb
