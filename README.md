@@ -10,11 +10,11 @@ This will serve several purposes. I set a realistic goal of 100 hours of python 
 
 4) Functions and Graphs.ipynb covers code on how to make basic plots.
 
-5) Linear Regression.ipynb reinforces 1)
+5) Linear Regression.ipynb reinforces 1). Shows you how to import an excel sheet, run OLS and printing coefficients from the regression.
 
 6) Math Equations and Expressions.ipynb
 
-7) Other Stat Stuff.ipynb 
+7) Other Stat Stuff.ipynb shows a biased estimator.
 
 8) PersonA1-afteralldescriptivestats19756.dta is the dataset I use for 1)
 
@@ -22,8 +22,8 @@ This will serve several purposes. I set a realistic goal of 100 hours of python 
 
 10) Python_terminology.pdf is my interpretation of the objects in python plus some writing conventions.
 
-11) Simultaneous Equations.ipynb
+11) Simultaneous Equations.ipynb 
 
-12) Stats from some appendix book.ipynb
+12) Distributions.ipynb has a myriad of distributions and shows how to plot them.
 
-13) Sympy - Math Latex.ipynb
+13) Sympy - Math Latex.ipynb uses a solver to find the equilibrium of a set of equations. 
