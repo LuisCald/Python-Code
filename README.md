@@ -14,7 +14,7 @@ This will serve several purposes. I set a realistic goal of 100 hours of python 
 
 6) Math Equations and Expressions.ipynb
 
-7) Other Stat Stuff.ipynb shows a biased estimator.
+7) Biasedness.ipynb compares unbiased to biased estimators.
 
 8) PersonA1-afteralldescriptivestats19756.dta is the dataset I use for 1)
 
