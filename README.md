@@ -12,7 +12,7 @@ This will serve several purposes. I set a realistic goal of 100 hours of python 
 
 5) Linear Regression.ipynb reinforces 1). Shows you how to import an excel sheet, run OLS and printing coefficients from the regression.
 
-6) Math Equations and Expressions.ipynb
+6) Math Equations and Expressions.ipynb is just some more plotting practice of different mathematical functions. 
 
 7) Biasedness.ipynb compares unbiased to biased estimators.
 
