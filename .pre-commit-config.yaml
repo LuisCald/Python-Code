@@ -1,7 +1,7 @@
 # Exclude every file or folder starting with a dot.
 exclude: ^\.
-repos:
 
+repos: 
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.3.0
     hooks:
@@ -19,6 +19,7 @@ repos:
         '--ignore=E203,E402,E501,E800,W503,F401',
         '--select=B,C,E,F,W,T4,B9'
       ]
+
 
 
 
