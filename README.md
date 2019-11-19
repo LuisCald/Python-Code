@@ -1,9 +1,7 @@
 # Python-Code
-This will serve several purposes. I set a realistic goal of 100 hours of python a month - independent of work and assignments. In conjunction, I'll be posting short files on anything python with the personal goal of expanding my python library. I also wanted a way to record my progress and think this is a good way to do it. Each py file will be commented and I'll drop a dataset to work on. I'd like to exhaust all tools that effectively extract and present information from data. The remaining files will be from projects and assignments I am actively working on in Economics.  
+ 
 
 # Description of Files
-0) 100_hour_mission will be a running file of python code on anything. The code will label and record each day properly with time and date.
-
 1) Basic_DataHandling_using_IPUMSdata.py goes over importing, merging, creating boolean variables, some important methods, and a simple linear regression.
 
 2) Bellman Equation Material.ipynb is code on how to set up the bellman and how to apply it.
@@ -29,3 +27,5 @@ This will serve several purposes. I set a realistic goal of 100 hours of python 
 12) Distributions.ipynb has a myriad of distributions and shows how to plot them.
 
 13) Sympy - Math Latex.ipynb uses a solver to find the equilibrium of a set of equations. 
+
+14) datetime.py is a module to handle "datetime" data.
