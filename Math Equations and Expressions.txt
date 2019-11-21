@@ -1,0 +1,94 @@
+pi = np.pi
+x = np.linspace(-10, 15, 1000)
+
+plt.rcParams['figure.figsize'] = (11,4)
+
+plt.xticks([-10, -5, 0, 5, 10],
+          ['$-10$', '$-5$', '$0$', '$5$', '$10$'])
+plt.axhline(0, color='black')
+plt.plot(x, x**2, label=r'$f(x)= x^2$')
+plt.legend(loc='best')
+plt.title('Quadratic Function')
+plt.show()
+
+pi = np.pi
+x = np.linspace(-10, 15, 1000)
+
+plt.rcParams['figure.figsize'] = (11,4)
+
+plt.xticks([-10, -5, 0, 5, 10],
+          ['$-10$', '$-5$', '$0$', '$5$', '$10$'])
+plt.axhline(0, color='black')
+plt.plot(x, x**3, label=r'$f(x)= x^3$')
+plt.legend(loc='best')
+plt.title('Cubic Function')
+plt.show()
+
+pi = np.pi
+x = np.linspace(-45, 45, 1000)
+
+plt.rcParams['figure.figsize'] = (11,11)
+
+plt.xticks([-40, -20, 0, 20, 40],
+          ['$-40$', '$-20$', '$0$', '$20$', '$40$'])
+plt.axhline(0, color='black')
+plt.plot(x, x**4+x**3+x**2+x, label=r'$f(x)= x^4 +x^3+x^2+x$')
+plt.legend(loc='best')
+plt.title('Polynomial Function')
+plt.show()
+
+e = np.e
+x = np.linspace(-45, 45, 1000)
+
+plt.rcParams['figure.figsize'] = (11,4)
+
+plt.xticks([-40, -20, 0, 20, 40],
+          ['$-40$', '$-20$', '$0$', '$20$', '$40$'])
+
+plt.axhline(0, color='black')
+plt.plot(x, e**x, label=r'$f(x)= e^x$')
+plt.legend(loc='best')
+plt.title('Exponential Function')
+plt.show()
+
+math = np.math
+x = np.linspace(-45, 45, 1000)
+
+plt.rcParams['figure.figsize'] = (11,4)
+
+plt.xticks([-40, -20, 0, 20, 40],
+          ['$-40$', '$-20$', '$0$', '$20$', '$40$'])
+plt.yticks([-20000, 0, 20000])
+plt.axhline(0, color='black')
+plt.plot(x, np.log10(np.abs(x)), label=r'$f(x)= log_{10} x$')
+plt.legend(loc='best')
+plt.title('Logarithmic Function')
+plt.show()
+
+import math
+math = np.math
+pi = np.pi
+x = np.linspace(-10, 15, 1000)
+
+plt.rcParams['figure.figsize'] = (11,4)
+
+plt.xticks([-10, -5, 0, 5, 10],
+          ['$-10$', '$-5$', '$0$', '$5$', '$10$'])
+plt.axhline(0, color='black')
+plt.plot(x, np.sqrt(x), label=r'$f(x)= \sqrt{x}$')
+plt.legend(loc='best')
+plt.title('Root Function')
+plt.show()
+
+import math
+math = np.math
+pi = np.pi
+x = np.linspace(-10, 15, 1000)
+plt.rcParams['figure.figsize'] = (5, 4)
+plt.xticks([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5],
+          ['$-5$', '$-4$', '$-3$', '$-2$', '$-1$', '$0$', '$1$', "$2$", "$3$", "$4$", "$5$"])
+plt.axhline(-10, color='yellow')
+plt.plot(x, 1/x, label=r'$Sample$')
+plt.legend(loc='best')
+plt.title('Sample Graph')
+plt.show()
