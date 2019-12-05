@@ -161,3 +161,43 @@ for subscale in subscale_strings:
 
 # Save final dataset as csv in bld/out/data/bpi_final.csv.
 df_chs_bpi_merged.to_csv(ppj("OUT_DATA", "bpi_final.csv"))
+
+# In case you prefer dictionary to make file wide-to-long
+# Creating a dictionary with variables corresponding to a certain year
+bpi_year_variable = bpi_info_csv[["survey_year", "nlsy_name"]]
+bpi_year_variable["nlsy_name"][0] = "childid"
+bpi_dict = defaultdict(list)
+
+# This appends the variables to each year
+for year, variable in bpi_year_variable.itertuples(index=False):
+    if year == "invariant":
+        pass
+    else:
+        bpi_dict[year].append(variable)
+
+# To actually place rows/content into the variables in the dicitonary
+bpi_dict2 = defaultdict(list)
+
+for key, value in bpi_dict.items():
+    bpi_dict2[key].append(bpi_data[value])
+
+# Replace names with the readable names
+dict_bpi_info_readable_name = dict(zip(bpi_info_csv["nlsy_name"], bpi_info_csv["readable_name"]))
+
+for key, value in bpi_dict2.items():
+    bpi_dict2[key][0] = bpi_dict2[key][0].rename(columns=dict_bpi_info_readable_name)
+
+# Add Childid to each dataframe
+for year in bpi_dict2.keys():
+    bpi_dict2[year][0]["childid"] = bpi_data["childid"]
+
+# Form a final dataset, where we concatenate all dfs for all years
+bpi_long = pd.DataFrame()
+
+for key, value in bpi_dict2.items():
+    df = pd.DataFrame(value[0]) # Creating dataframes from values
+    df.loc[:,'year'] = key  # Adding column called 'year'
+    bpi_long = pd.concat([df, bpi_long], 0)
+    
+# Set index as child_id and year
+bpi_long = bpi_long.set_index(["childid","year"]) 
