@@ -1,16 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Merge map data to bowling for fascism data
-
-Crosswalk:
-    Merge the bowling data set to the crosswalk via the city id and then merge
-    the corsswalk to the merged file that contains all map units
-
-Add more comment to code !!
-"""
 import os
-
 import pandas as pd
 import numpy as np
 
