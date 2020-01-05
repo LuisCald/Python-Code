@@ -1,14 +1,4 @@
-"""
-Create a crosswalk between the radio data and the map data.
-
-Delet the Hirschberg merge !
-Merge radio to the radio_kreis_merge on the merged_df file to obtain the
-dataset
-
-"""
 import os
-
-
 import pandas as pd
 
 #base_path = r'C:\Users\Moritz.Mendel\Dropbox\Germany_state\1_Data\Radio_and_Nazis'
