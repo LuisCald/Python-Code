@@ -1,35 +1,4 @@
-"""
-Short description of the way too complicated merge process:
-
-    Merge a df of persecution variables on the
-    merge_map_persecution_crosswalk_to_persecution.csv file
-    Use kreis_nr or kreis as merge key these are both unique !
-    Then we have a file that link the unique kreis name to the merge
-    name which could be different depending on
-    the level of aggregation.
-
-    Then we groupy the resulting df by nazi_kreis_merge.
-    (That is also why the reduce strings functions looks so ugly to ensure
-    that there are no duplicated nazi_kreis_merge variables that are
-    not the same unit !)
-    Thereafter we can glue that to the actual crosswalk that relates
-    nazi_merge_names to map merge names by nazi_merge_names !
-    Then we can easily connect to the map data !
-
-    Quick explanation we we merge in two steps:
-    The first crosswalk specifies which persecution units to aggregate and the
-    second one links the aggregated units to map units.
-    That procedure is required due to a county reform in the early 30s.
-
-    Manual merges:
-    Some crosswalks are still saved in csv files. That was a bad idea but now
-    we are stuck with in due to lock in effects.
-    What I do is import these files perfroming two left merges with left over
-    dataframes to get an other small part of the crosswalk.
-    In the end I concatenate these files.
-"""
 import os
-
 import pandas as pd
 import numpy as np
 
