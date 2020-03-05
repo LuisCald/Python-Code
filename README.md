@@ -1,12 +1,15 @@
 # Python-Code
 
-For samples of data-handling, see the following:
-1) clean_NSLY_data.py
-2) visualize_NSLY_data.py
-3) Basic_DataHandling_using_IPUMSdata.py
-4) A-H_project files 
+Contained is my coding progression:
 
-For samples of pure code, see the following:
-1) predict.py
-2) update.py
+1) first_steps (3 years ago)
+2) data_cleaning_practice (2 years ago)
+3) prussia_project (1 year ago)
+4) effective_programming_code (this past semester)
+5) war_trial_project (this year, 2020)
+6) estimagic_likelihood_inference (this month)
+
+
+
+
 

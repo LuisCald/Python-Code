@@ -1,0 +1,8 @@
+sources for background:
+https://en.wikipedia.org/wiki/Pseudolikelihood
+https://www.stata.com/manuals13/svy.pdf page 91
+https://en.wikipedia.org/wiki/Stratified_sampling
+https://courses.cit.cornell.edu/econ620/reviewm5.pdf
+
+create a function for estimate params which makes the 
+probability mass function 
