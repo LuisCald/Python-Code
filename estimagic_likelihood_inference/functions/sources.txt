@@ -6,3 +6,4 @@ https://courses.cit.cornell.edu/econ620/reviewm5.pdf
 
 create a function for estimate params which makes the 
 probability mass function 
+

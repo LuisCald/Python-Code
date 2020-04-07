@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Oct  4 22:05:32 2019
-
-@author: Jrxz12
-"""
+"""Simple Data-handling tricks you should know. """
 # Preliminaries
 import os
 import numpy as np
@@ -18,16 +13,16 @@ import seaborn as sns
 # Importing Data
 input_base_path = r"C:\Users\Jrxz12\Desktop"
 
-file1 = r"Python-Code\PersonA1.dta"
-file2 = r"Python-Code\PersonB1.dta"
+file1 = r"Python-Code\data_cleaning_practice\PersonA1.dta"
+file2 = r"Python-Code\data_cleaning_practice\PersonB1.dta"
 
-Aimee_df1 = pd.read_stata(os.path.join(input_base_path, file1))
-Aimee_df2 = pd.read_stata(os.path.join(input_base_path, file2))
+left_df = pd.read_stata(os.path.join(input_base_path, file1))
+right_df = pd.read_stata(os.path.join(input_base_path, file2))
 
-# Merge Data
-lefton_condition = Aimee_df1.columns.tolist()
-final_df = Aimee_df1.merge(Aimee_df2,
-                           how="outer",
+# Merge Data on all columns
+lefton_condition = left_df.columns.tolist()
+final_df = left_df.merge(right_df,
+                           how="outer",  # Keep obs from left_df & right_df
                            left_on=lefton_condition,
                            right_on=lefton_condition,
                            )
@@ -42,7 +37,6 @@ for column in columns_to_remake:
     final_df[column] = np.nan
 
 # Another way to add them would be:
-
 condition = [
     (final_df["eng"] == 4),
     (final_df["eng"] == 3),
@@ -57,22 +51,22 @@ final_df["EngA"] = (np.select(condition, choices, default=np.nan)).astype(float)
 # zip fashion
 
 # Defining the Conditions
-condition2 = [
+excellent_english = [
     (final_df["EngA"] == 3),
     (final_df["EngA"] == 2) | (final_df["EngA"] == 1) | (final_df["EngA"] == 0)
 ]
 
-condition3 = [
+good_english = [
     (final_df["EngA"] == 2),
     (final_df["EngA"] == 3) | (final_df["EngA"] == 1) | (final_df["EngA"] == 0)
 ]
 
-condition4 = [
+not_good_english = [
     (final_df["EngA"] == 1),
     (final_df["EngA"] == 3) | (final_df["EngA"] == 2) | (final_df["EngA"] == 0)
 ]
 
-condition5 = [
+no_english = [
     (final_df["EngA"] == 0),
     (final_df["EngA"] == 3) | (final_df["EngA"] == 2) | (final_df["EngA"] == 1)
 ]
@@ -81,39 +75,38 @@ condition5 = [
 binary_choice = [1, 0]
 
 # Creating the variables by accessing the conditions and assigning the choices
-final_df["SEVW"] = np.select(condition2, binary_choice, default=np.nan)
-final_df["SEW"] = np.select(condition3, binary_choice, default=np.nan)
-final_df["SENW"] = np.select(condition4, binary_choice, default=np.nan)
-final_df["SNE"] = np.select(condition5, binary_choice, default=np.nan)
+final_df["SEVW"] = np.select(excellent_english, binary_choice, default=np.nan)
+final_df["SEW"] = np.select(good_english, binary_choice, default=np.nan)
+final_df["SENW"] = np.select(not_good_english, binary_choice, default=np.nan)
+final_df["SNE"] = np.select(no_english, binary_choice, default=np.nan)
 
 
 # Using groupby
-# Typically used to group observations that have a similar characteristic
-Example1 = final_df.groupby('EngA')
+# Typically used to group observations that have a similar characteristics
+Example1 = final_df.groupby('EngA')  # Same as final_df["EngA"]
 Example2 = final_df.groupby(['EngA', 'EducationalAttainment'])
 
 # Extracting a small piece from final_df
 df_example = final_df[['EngA', 'EducationalAttainment']]
 
-# Generating mean for all columns by EngA. In this case, all columns= 1 column
+# Gets groups from EngA. Gets mean of EducationaAttainment for each group 
 Example3 = df_example.groupby('EngA').mean()
 
 # This just snags all rows corresponding to EngA == 1
 # and the following for EngA == 2
-Example4 = df_example.groupby('EngA').get_group(1)
+Example4 = df_example.groupby('EngA').get_group(1)  # Gets all obs for EngA==1
 Example5 = df_example.groupby('EngA').get_group(2)
 
 
 # Concatenate. This links two dataframes as would an outer merge
 df_example2 = pd.concat([Example4, Example5])
 
-# Let's try append. The result here is the same.
+# Let's try append. The result here is the same since obs are independent
 df_example3 = Example4.append(Example5)
 
 # You can also use extend instead of append. Extend is used in the cases where
 # there are multiple elements to add.
 
-# To sort, as you would expect, we use the .sort_values function
 # To sort a list, we can use just .sort
 df_example4 = df_example3.sort_values(['EngA', 'EducationalAttainment'])
 
@@ -125,8 +118,7 @@ df_example4['EngA'].mean(skipna=False)  # the default is the mean over the col.
 
 # Correlation for Series and df, covariance
 correlation = df_example4.EngA.corr(df_example4.EducationalAttainment)
-df_example4.corr()
-covariance = df_example4.EngA.cov(df_example4.EducationalAttainment)
+df_example4.corr()  # Returns same number since they are the same 2 columns
 
 
 # Other
